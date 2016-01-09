@@ -31,6 +31,7 @@ public:
 
 protected:  // 控件条嵌入成员
 	CToolBar          m_wndToolBar;
+	CToolBar          m_wndPlayToolBar;
 	CStatusBar        m_wndStatusBar;
 
 // 生成的消息映射函数
@@ -38,6 +39,8 @@ protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	DECLARE_MESSAGE_MAP()
 
+public:
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 };
 
 

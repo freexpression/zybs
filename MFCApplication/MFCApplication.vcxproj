@@ -92,6 +92,8 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <AdditionalIncludeDirectories>$(ProjectDir)Include;$(ProjectDir)Source;$(ProjectDir)Source\Model;$(ProjectDir)Source\View</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -105,7 +107,7 @@
     <ResourceCompile>
       <Culture>0x0804</Culture>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IntDir);$(ProjectDir)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -186,28 +188,54 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
+    <ClInclude Include="Source\Model\Block.h" />
+    <ClInclude Include="Source\Model\Ball.h" />
+    <ClInclude Include="Include\Global.h" />
+    <ClInclude Include="Source\Model\Force.h" />
+    <ClInclude Include="Source\Model\Obj.h" />
+    <ClInclude Include="Source\View\BallView.h" />
+    <ClInclude Include="Source\View\Canvas.h" />
+    <ClInclude Include="Source\Controller\Engine.h" />
+    <ClInclude Include="Source\Frame\MainFrm.h" />
+    <ClInclude Include="Source\Frame\MFCApplication.h" />
+    <ClInclude Include="Source\Frame\MFCApplicationDoc.h" />
+    <ClInclude Include="Source\Frame\MFCApplicationView.h" />
+    <ClInclude Include="Source\Model\Plane.h" />
+    <ClInclude Include="Source\View\RectangleView.h" />
+    <ClInclude Include="Include\Resource.h" />
+    <ClInclude Include="Source\Controller\Scene.h" />
+    <ClInclude Include="Source\View\SlopeView.h" />
+    <ClInclude Include="Include\stdafx.h" />
+    <ClInclude Include="Include\targetver.h" />
+    <ClInclude Include="Source\View\TriangleView.h" />
+    <ClInclude Include="Source\Model\WeightObject.h" />
+    <ClInclude Include="Source\Model\Speed.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MainFrm.h" />
-    <ClInclude Include="MFCApplication.h" />
-    <ClInclude Include="MFCApplicationDoc.h" />
-    <ClInclude Include="MFCApplicationView.h" />
-    <ClInclude Include="Resource.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="MainFrm.cpp" />
-    <ClCompile Include="MFCApplication.cpp" />
-    <ClCompile Include="MFCApplicationDoc.cpp" />
-    <ClCompile Include="MFCApplicationView.cpp" />
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="Source\Model\Block.cpp" />
+    <ClCompile Include="Source\Model\Ball.cpp" />
+    <ClCompile Include="Source\Model\Force.cpp" />
+    <ClCompile Include="Source\Model\Obj.cpp" />
+    <ClCompile Include="Source\View\BallView.cpp" />
+    <ClCompile Include="Source\View\Canvas.cpp" />
+    <ClCompile Include="Source\Controller\Engine.cpp" />
+    <ClCompile Include="Source\Frame\MainFrm.cpp" />
+    <ClCompile Include="Source\Frame\MFCApplication.cpp" />
+    <ClCompile Include="Source\Frame\MFCApplicationDoc.cpp" />
+    <ClCompile Include="Source\Frame\MFCApplicationView.cpp" />
+    <ClCompile Include="Source\Model\Plane.cpp" />
+    <ClCompile Include="Source\View\RectangleView.cpp" />
+    <ClCompile Include="Source\Controller\Scene.cpp" />
+    <ClCompile Include="Source\View\SlopeView.cpp" />
+    <ClCompile Include="Source\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Source\View\TriangleView.cpp" />
+    <ClCompile Include="Source\Model\WeightObject.cpp" />
+    <ClCompile Include="Source\Model\Speed.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MFCApplication.reg" />
@@ -219,9 +247,15 @@
   <ItemGroup>
     <Image Include="res\MFCApplication.ico" />
     <Image Include="res\MFCApplicationDoc.ico" />
+    <Image Include="res\PlayToolbar.bmp" />
     <Image Include="res\Toolbar.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="MFCApplication.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

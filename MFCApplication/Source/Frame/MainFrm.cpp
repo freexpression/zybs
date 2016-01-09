@@ -17,6 +17,7 @@ IMPLEMENT_DYNCREATE(CMainFrame, CFrameWnd)
 
 BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_WM_CREATE()
+	ON_WM_TIMER()
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -50,6 +51,13 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		return -1;      // 未能创建
 	}
 
+	if (!m_wndPlayToolBar.CreateEx(this, TBSTYLE_FLAT, WS_CHILD | WS_VISIBLE | CBRS_TOP | CBRS_GRIPPER | CBRS_TOOLTIPS | CBRS_FLYBY | CBRS_SIZE_DYNAMIC) ||
+		!m_wndPlayToolBar.LoadToolBar(IDR_PLAY_TOOLBAR))
+	{
+		TRACE0("未能创建播放工具栏\n");
+		return -1;      // 未能创建
+	}
+	
 	if (!m_wndStatusBar.Create(this))
 	{
 		TRACE0("未能创建状态栏\n");
@@ -58,10 +66,13 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	m_wndStatusBar.SetIndicators(indicators, sizeof(indicators)/sizeof(UINT));
 
 	// TODO: 如果不需要可停靠工具栏，则删除这三行
-	m_wndToolBar.EnableDocking(CBRS_ALIGN_ANY);
+	m_wndPlayToolBar.EnableDocking(CBRS_ALIGN_ANY);
 	EnableDocking(CBRS_ALIGN_ANY);
-	DockControlBar(&m_wndToolBar);
+	DockControlBar(&m_wndPlayToolBar);
 
+	//
+	SetTimer(TIMER1, 100, 0);
+	//SetTimer(TIMER2, 5000, 0);
 
 	return 0;
 }
@@ -93,3 +104,25 @@ void CMainFrame::Dump(CDumpContext& dc) const
 
 // CMainFrame 消息处理程序
 
+
+int count = 0;
+void CMainFrame::OnTimer(UINT_PTR nIDEvent)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+
+	CFrameWnd::OnTimer(nIDEvent);
+
+	CDC* pDC = CWnd::GetDC();
+
+	int left = 10 * count;
+	CRect rect(left, 200, 20 + left, 260);
+
+	InvalidateRect(rect);
+
+	count++;
+	rect.left = 10 * count + 1;
+	rect.right = rect.left + 20;
+	pDC->DrawEdge(rect, EDGE_BUMP, BF_ADJUST | BF_BOTTOMLEFT | BF_TOPRIGHT);
+
+	//pDC->DrawText("xxxxxxxx", cRect, 0);
+}
