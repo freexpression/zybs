@@ -1,8 +1,10 @@
 #pragma once
+
+#include "Obj.h"
 /*
 定义平面物体类，此类物体具有角度和摩擦系数。
 */
-class CPlane
+class CPlane : public CObj
 {
 public:
 	CPlane();

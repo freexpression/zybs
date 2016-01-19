@@ -26,6 +26,15 @@ BEGIN_MESSAGE_MAP(CMFCApplicationView, CView)
 	ON_COMMAND(ID_FILE_PRINT, &CView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_DIRECT, &CView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CView::OnFilePrintPreview)
+//	ON_COMMAND(ID_ADD_PLANE, &CMFCApplicationView::OnAddPlane)
+	ON_WM_TIMER()
+ON_COMMAND(ID_PLAY_START, &CMFCApplicationView::OnPlayStart)
+ON_COMMAND(ID_OP_ADD_PLANE, &CMFCApplicationView::OnOpAddPlane)
+ON_COMMAND(ID_OP_NORMAL, &CMFCApplicationView::OnOpNormal)
+ON_UPDATE_COMMAND_UI(ID_OP_ADD_PLANE, &CMFCApplicationView::OnUpdateOpAddPlane)
+ON_UPDATE_COMMAND_UI(ID_OP_NORMAL, &CMFCApplicationView::OnUpdateOpNormal)
+ON_WM_LBUTTONDOWN()
+ON_COMMAND(ID_PLAY_STOP, &CMFCApplicationView::OnPlayStop)
 END_MESSAGE_MAP()
 
 // CMFCApplicationView 构造/析构
@@ -33,7 +42,6 @@ END_MESSAGE_MAP()
 CMFCApplicationView::CMFCApplicationView()
 {
 	// TODO: 在此处添加构造代码
-
 }
 
 CMFCApplicationView::~CMFCApplicationView()
@@ -50,14 +58,19 @@ BOOL CMFCApplicationView::PreCreateWindow(CREATESTRUCT& cs)
 
 // CMFCApplicationView 绘制
 
-void CMFCApplicationView::OnDraw(CDC* /*pDC*/)
+void CMFCApplicationView::OnDraw(CDC* pDC)
 {
 	CMFCApplicationDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 	if (!pDoc)
 		return;
 
-	// TODO: 在此处为本机数据添加绘制代码
+	std::vector<CObjView*>::iterator it;
+
+	for (it = m_ViewList.begin(); it != m_ViewList.end(); it++)
+	{
+		(*it)->Paint(pDC);
+	}
 }
 
 
@@ -102,3 +115,103 @@ CMFCApplicationDoc* CMFCApplicationView::GetDocument() const // 非调试版本是内联
 
 
 // CMFCApplicationView 消息处理程序
+
+void CMFCApplicationView::Repaint()
+{
+    CDC* pDC = CWnd::GetDC();
+
+    OnDraw(pDC);
+}
+
+void CMFCApplicationView::OnTimer(UINT_PTR nIDEvent)
+{
+    Repaint();
+}
+
+
+void CMFCApplicationView::OnPlayStart()
+{
+	SetTimer(PLAY_TIMER, 1000, NULL);
+}
+
+
+void CMFCApplicationView::OnPlayStop()
+{
+    KillTimer(PLAY_TIMER);
+}
+
+void CMFCApplicationView::OnOpNormal()
+{
+	m_Mode = OP_CURSOR;
+}
+
+void CMFCApplicationView::OnOpAddPlane()
+{
+	m_Mode = OP_ADD_PLANE;
+}
+
+//
+
+void CMFCApplicationView::OnUpdateOpAddPlane(CCmdUI *pCmdUI)
+{
+	pCmdUI->SetCheck(m_Mode == OP_ADD_PLANE);
+}
+
+
+void CMFCApplicationView::OnUpdateOpNormal(CCmdUI *pCmdUI)
+{
+	pCmdUI->SetCheck(m_Mode == OP_CURSOR);
+}
+
+
+void CMFCApplicationView::OnLButtonDown(UINT nFlags, CPoint point)
+{
+    switch (m_Mode)
+    {
+    case OP_ADD_PLANE:
+        HandleAddPlaneEvent(nFlags, point);
+        SetOpNormal();
+    default:
+        break;
+    }
+
+    //设置窗口为无效区域，触发重绘
+    Invalidate();
+	CView::OnLButtonDown(nFlags, point);
+}
+
+void CMFCApplicationView::SetOpNormal()
+{
+    m_Mode = OP_CURSOR;
+    HCURSOR m_Cursor;
+    m_Cursor = AfxGetApp()->LoadCursor(IDC_CURSOR1);
+
+    CToolBar *pToolBar = (CToolBar *)//取得工具栏对象指针
+
+        (GetParentFrame()->GetControlBar(IDR_DOCKTOOLBAR));
+
+    //取得工具条控制指针
+
+    CToolBarCtrl *pToolBarCtrl = &(pToolBar->GetToolBarCtrl());
+
+    //控制工具条按钮状态
+
+    pToolBarCtrl->EnableButton(ID_BUTTON_START, FALSE);
+
+    pToolBarCtrl->EnableButton(ID_BUTTON_STOP, TRUE);
+
+    CClientDC dc(this);//取得设备文本
+}
+
+void CMFCApplicationView::HandleAddPlaneEvent(UINT nFlags, CPoint point)
+{
+    CMFCApplicationDoc* pDoc = GetDocument();
+
+    CPlane pPlane;
+    pDoc->AddObj(pPlane);
+
+    CPlaneView* pView = new CPlaneView();
+    pView->SetObj(pPlane);
+
+    m_ViewList.push_back(pView);
+}

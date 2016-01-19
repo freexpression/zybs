@@ -93,7 +93,7 @@
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <FloatingPointModel>Fast</FloatingPointModel>
-      <AdditionalIncludeDirectories>$(ProjectDir)Include;$(ProjectDir)Source;$(ProjectDir)Source\Model;$(ProjectDir)Source\View</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)Include;$(ProjectDir)Source;$(ProjectDir)Source\Controller;$(ProjectDir)Source\Frame;$(ProjectDir)Source\Model;$(ProjectDir)Source\View</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -107,7 +107,7 @@
     <ResourceCompile>
       <Culture>0x0804</Culture>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(IntDir);$(ProjectDir)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -188,6 +188,10 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Source\View\PlaneView.h" />
+    <ClInclude Include="Source\View\BlockView.h" />
+    <ClInclude Include="Source\View\ObjView.h" />
     <ClInclude Include="Source\Model\Block.h" />
     <ClInclude Include="Source\Model\Ball.h" />
     <ClInclude Include="Include\Global.h" />
@@ -202,16 +206,18 @@
     <ClInclude Include="Source\Frame\MFCApplicationView.h" />
     <ClInclude Include="Source\Model\Plane.h" />
     <ClInclude Include="Source\View\RectangleView.h" />
-    <ClInclude Include="Include\Resource.h" />
     <ClInclude Include="Source\Controller\Scene.h" />
     <ClInclude Include="Source\View\SlopeView.h" />
     <ClInclude Include="Include\stdafx.h" />
-    <ClInclude Include="Include\targetver.h" />
+    <ClInclude Include="targetver.h" />
     <ClInclude Include="Source\View\TriangleView.h" />
     <ClInclude Include="Source\Model\WeightObject.h" />
     <ClInclude Include="Source\Model\Speed.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\View\PlaneView.cpp" />
+    <ClCompile Include="Source\View\BlockView.cpp" />
+    <ClCompile Include="Source\View\ObjView.cpp" />
     <ClCompile Include="Source\Model\Block.cpp" />
     <ClCompile Include="Source\Model\Ball.cpp" />
     <ClCompile Include="Source\Model\Force.cpp" />
@@ -247,6 +253,7 @@
   <ItemGroup>
     <Image Include="res\MFCApplication.ico" />
     <Image Include="res\MFCApplicationDoc.ico" />
+    <Image Include="res\ModelToolbar.bmp" />
     <Image Include="res\PlayToolbar.bmp" />
     <Image Include="res\Toolbar.bmp" />
   </ItemGroup>

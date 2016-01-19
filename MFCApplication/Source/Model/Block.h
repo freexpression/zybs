@@ -8,7 +8,9 @@ public:
 	~CBlock();
 
 public:
-	float m_width = 0;
-	float m_heigh = 0;
+	int m_x = 0; //左上角位置X
+	int m_y = 0; //左上角位置Y
+	int m_width = 0; //宽度
+	int m_heigh = 0; //高度
 };
 

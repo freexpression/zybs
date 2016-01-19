@@ -83,6 +83,8 @@ IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
 
 IDR_PLAY_TOOLBAR        BITMAP                  "res\\PlayToolbar.bmp"
 
+IDR_MODEL_TOOLBAR       BITMAP                  "res\\ModelToolbar.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -105,9 +107,19 @@ END
 
 IDR_PLAY_TOOLBAR TOOLBAR 16, 15
 BEGIN
-    BUTTON      ID_BUTTON32772
+    BUTTON      ID_PLAY_START
     BUTTON      ID_BUTTON32773
-    BUTTON      ID_BUTTON32774
+    BUTTON      ID_PLAY_STOP
+END
+
+IDR_MODEL_TOOLBAR TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_OP_NORMAL
+    BUTTON      ID_OP_ADD_PLANE
+    BUTTON      ID_BUTTON32776
+    BUTTON      ID_BUTTON32778
+    BUTTON      ID_BUTTON32779
+    BUTTON      ID_BUTTON32780
 END
 
 
@@ -375,6 +387,11 @@ END
 STRINGTABLE
 BEGIN
     AFX_IDS_PREVIEW_CLOSE   "关闭打印预览模式\n取消预览"
+END
+
+STRINGTABLE
+BEGIN
+    ID_OP_ADD_PLANE         "在窗口中加入平台"
 END
 
 #endif    // 中文(简体，中国) resources

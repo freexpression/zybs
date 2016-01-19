@@ -1,10 +1,9 @@
 
 // MFCApplicationDoc.h : CMFCApplicationDoc 类的接口
 //
-
-
 #pragma once
 
+#include "Obj.h"
 
 class CMFCApplicationDoc : public CDocument
 {
@@ -17,6 +16,8 @@ public:
 
 // 操作
 public:
+	//添加一个模型到Doc中，同时返回该Obj。
+	CObj& AddObj(CObj& pObj);
 
 // 重写
 public:

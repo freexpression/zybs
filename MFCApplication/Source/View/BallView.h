@@ -1,8 +1,9 @@
 #pragma once
 
 #include "Ball.h"
+#include "ObjView.h"
 
-class CBallView
+class CBallView : public CObjView
 {
 public:
 	CBallView();

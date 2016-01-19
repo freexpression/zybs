@@ -48,6 +48,11 @@ BOOL CMFCApplicationDoc::OnNewDocument()
 	return TRUE;
 }
 
+CObj& CMFCApplicationDoc::AddObj(CObj& pObj)
+{
+	return pObj;
+}
+
 
 
 

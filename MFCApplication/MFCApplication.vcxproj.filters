@@ -57,13 +57,7 @@
     <ClInclude Include="Source\Frame\MFCApplicationView.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Resource.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Include\stdafx.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Source\Model\Force.h">
@@ -79,6 +73,21 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Source\Model\Block.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\View\ObjView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\View\BlockView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\View\PlaneView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -140,6 +149,15 @@
     <ClCompile Include="Source\Model\Block.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Source\View\ObjView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\View\BlockView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\View\PlaneView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\MFCApplication.rc2">
@@ -158,6 +176,9 @@
       <Filter>资源文件</Filter>
     </Image>
     <Image Include="res\PlayToolbar.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\ModelToolbar.bmp">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>
