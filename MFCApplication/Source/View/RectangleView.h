@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 class CRectangleView
 {
 public:
@@ -6,9 +6,8 @@ public:
 	~CRectangleView();
 
 private:
-	int m_x; //×óÉÏ½ÇÎ»ÖÃX
-	int m_y; //×óÉÏ½ÇÎ»ÖÃY
-	int m_width; //¿í¶È
-	int m_heigh; //¸ß¶È
+	int m_x; //å·¦ä¸Šè§’ä½ç½®X
+	int m_y; //å·¦ä¸Šè§’ä½ç½®Y
+	int m_width; //å®½åº¦
+	int m_heigh; //é«˜åº¦
 };
-

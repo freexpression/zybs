@@ -1,6 +1,6 @@
-//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ ���ɵİ����ļ���
-// �� MFCApplication.rc ʹ��
+﻿//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ 生成的包含文件。
+// 供 MFCApplication.rc 使用
 //
 #define PLAY_TIMER                      1
 #define IDD_ABOUTBOX                    100

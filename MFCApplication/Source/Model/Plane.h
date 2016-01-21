@@ -1,8 +1,8 @@
-#pragma once
+ï»¿#pragma once
 
 #include "Obj.h"
 /*
-¶¨ÒåÆ½ÃæÎïÌåÀà£¬´ËÀàÎïÌå¾ßÓĞ½Ç¶ÈºÍÄ¦²ÁÏµÊı¡£
+å®šä¹‰å¹³é¢ç‰©ä½“ç±»ï¼Œæ­¤ç±»ç‰©ä½“å…·æœ‰è§’åº¦å’Œæ‘©æ“¦ç³»æ•°ã€‚
 */
 class CPlane : public CObj
 {
@@ -11,7 +11,6 @@ public:
 	~CPlane();
 
 private:
-	float m_theta = 0;//Ğ±Ãæ½Ç¶È£¨ÓëXÖáµÄ¼Ğ½Ç£©
-	float m_frict = 0;//Ä¦²ÁÏµÊı
+	float m_theta = 0;//æ–œé¢è§’åº¦ï¼ˆä¸Xè½´çš„å¤¹è§’ï¼‰
+	float m_frict = 0;//æ‘©æ“¦ç³»æ•°
 };
-

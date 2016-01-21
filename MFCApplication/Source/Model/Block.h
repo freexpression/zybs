@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "Obj.h"
 
 class CBlock : public CObj
@@ -8,9 +8,8 @@ public:
 	~CBlock();
 
 public:
-	int m_x = 0; //×óÉÏ½ÇÎ»ÖÃX
-	int m_y = 0; //×óÉÏ½ÇÎ»ÖÃY
-	int m_width = 0; //¿í¶È
-	int m_heigh = 0; //¸ß¶È
+	int m_x = 0; //å·¦ä¸Šè§’ä½ç½®X
+	int m_y = 0; //å·¦ä¸Šè§’ä½ç½®Y
+	int m_width = 0; //å®½åº¦
+	int m_heigh = 0; //é«˜åº¦
 };
-

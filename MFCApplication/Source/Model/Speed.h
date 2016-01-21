@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 class CSpeed
 {
@@ -6,7 +6,6 @@ public:
 	CSpeed();
 	~CSpeed();
 public:
-	float m_speed = 0;//ÊÜÁ¦´óĞ¡
-	float m_direct = 0;//ÊÜÁ¦·½Ïò, ÒÔXÖáÕı°ëÖá£¬ÄæÊ±Õë·½ÏòĞÎ³ÉµÄ½Ç¶È¡£ 
+	float m_speed = 0;//å—åŠ›å¤§å°
+	float m_direct = 0;//å—åŠ›æ–¹å‘, ä»¥Xè½´æ­£åŠè½´ï¼Œé€†æ—¶é’ˆæ–¹å‘å½¢æˆçš„è§’åº¦ã€‚ 
 };
-

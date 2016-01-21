@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 /*
 *
 */
@@ -10,4 +10,3 @@ public:
 
 	void Paint(CDC* pDc);
 };
-

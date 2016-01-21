@@ -1,6 +1,5 @@
-#pragma once
+ï»¿#pragma once
 
-//¶¨ÒåÈ«¾Ö±ÈÀý
+//å®šä¹‰å…¨å±€æ¯”ä¾‹
 int GL_SCALE_X = 10;
 int GL_SCALE_Y = 10;
-

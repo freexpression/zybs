@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 class CTriangleView
 {
 public:
@@ -8,4 +8,3 @@ public:
 private:
 
 };
-

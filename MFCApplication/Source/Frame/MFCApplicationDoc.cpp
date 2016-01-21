@@ -1,10 +1,10 @@
-
-// MFCApplicationDoc.cpp : CMFCApplicationDoc ÀàµÄÊµÏÖ
+ï»¿
+// MFCApplicationDoc.cpp : CMFCApplicationDoc ç±»çš„å®ç°
 //
 
 #include "stdafx.h"
-// SHARED_HANDLERS ¿ÉÒÔÔÚÊµÏÖÔ¤ÀÀ¡¢ËõÂÔÍ¼ºÍËÑË÷É¸Ñ¡Æ÷¾ä±úµÄ
-// ATL ÏîÄ¿ÖĞ½øĞĞ¶¨Òå£¬²¢ÔÊĞíÓë¸ÃÏîÄ¿¹²ÏíÎÄµµ´úÂë¡£
+// SHARED_HANDLERS å¯ä»¥åœ¨å®ç°é¢„è§ˆã€ç¼©ç•¥å›¾å’Œæœç´¢ç­›é€‰å™¨å¥æŸ„çš„
+// ATL é¡¹ç›®ä¸­è¿›è¡Œå®šä¹‰ï¼Œå¹¶å…è®¸ä¸è¯¥é¡¹ç›®å…±äº«æ–‡æ¡£ä»£ç ã€‚
 #ifndef SHARED_HANDLERS
 #include "MFCApplication.h"
 #endif
@@ -25,11 +25,11 @@ BEGIN_MESSAGE_MAP(CMFCApplicationDoc, CDocument)
 END_MESSAGE_MAP()
 
 
-// CMFCApplicationDoc ¹¹Ôì/Îö¹¹
+// CMFCApplicationDoc æ„é€ /ææ„
 
 CMFCApplicationDoc::CMFCApplicationDoc()
 {
-	// TODO: ÔÚ´ËÌí¼ÓÒ»´ÎĞÔ¹¹Ôì´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ ä¸€æ¬¡æ€§æ„é€ ä»£ç 
 
 }
 
@@ -42,8 +42,8 @@ BOOL CMFCApplicationDoc::OnNewDocument()
 	if (!CDocument::OnNewDocument())
 		return FALSE;
 
-	// TODO: ÔÚ´ËÌí¼ÓÖØĞÂ³õÊ¼»¯´úÂë
-	// (SDI ÎÄµµ½«ÖØÓÃ¸ÃÎÄµµ)
+	// TODO: åœ¨æ­¤æ·»åŠ é‡æ–°åˆå§‹åŒ–ä»£ç 
+	// (SDI æ–‡æ¡£å°†é‡ç”¨è¯¥æ–‡æ¡£)
 
 	return TRUE;
 }
@@ -56,26 +56,26 @@ CObj& CMFCApplicationDoc::AddObj(CObj& pObj)
 
 
 
-// CMFCApplicationDoc ĞòÁĞ»¯
+// CMFCApplicationDoc åºåˆ—åŒ–
 
 void CMFCApplicationDoc::Serialize(CArchive& ar)
 {
 	if (ar.IsStoring())
 	{
-		// TODO: ÔÚ´ËÌí¼Ó´æ´¢´úÂë
+		// TODO: åœ¨æ­¤æ·»åŠ å­˜å‚¨ä»£ç 
 	}
 	else
 	{
-		// TODO: ÔÚ´ËÌí¼Ó¼ÓÔØ´úÂë
+		// TODO: åœ¨æ­¤æ·»åŠ åŠ è½½ä»£ç 
 	}
 }
 
 #ifdef SHARED_HANDLERS
 
-// ËõÂÔÍ¼µÄÖ§³Ö
+// ç¼©ç•¥å›¾çš„æ”¯æŒ
 void CMFCApplicationDoc::OnDrawThumbnail(CDC& dc, LPRECT lprcBounds)
 {
-	// ĞŞ¸Ä´Ë´úÂëÒÔ»æÖÆÎÄµµÊı¾İ
+	// ä¿®æ”¹æ­¤ä»£ç ä»¥ç»˜åˆ¶æ–‡æ¡£æ•°æ®
 	dc.FillSolidRect(lprcBounds, RGB(255, 255, 255));
 
 	CString strText = _T("TODO: implement thumbnail drawing here");
@@ -93,14 +93,14 @@ void CMFCApplicationDoc::OnDrawThumbnail(CDC& dc, LPRECT lprcBounds)
 	dc.SelectObject(pOldFont);
 }
 
-// ËÑË÷´¦Àí³ÌĞòµÄÖ§³Ö
+// æœç´¢å¤„ç†ç¨‹åºçš„æ”¯æŒ
 void CMFCApplicationDoc::InitializeSearchContent()
 {
 	CString strSearchContent;
-	// ´ÓÎÄµµÊı¾İÉèÖÃËÑË÷ÄÚÈİ¡£
-	// ÄÚÈİ²¿·ÖÓ¦ÓÉ¡°;¡±·Ö¸ô
+	// ä»æ–‡æ¡£æ•°æ®è®¾ç½®æœç´¢å†…å®¹ã€‚
+	// å†…å®¹éƒ¨åˆ†åº”ç”±â€œ;â€åˆ†éš”
 
-	// ÀıÈç:     strSearchContent = _T("point;rectangle;circle;ole object;")£»
+	// ä¾‹å¦‚:     strSearchContent = _T("point;rectangle;circle;ole object;")ï¼›
 	SetSearchContent(strSearchContent);
 }
 
@@ -124,7 +124,7 @@ void CMFCApplicationDoc::SetSearchContent(const CString& value)
 
 #endif // SHARED_HANDLERS
 
-// CMFCApplicationDoc Õï¶Ï
+// CMFCApplicationDoc è¯Šæ–­
 
 #ifdef _DEBUG
 void CMFCApplicationDoc::AssertValid() const
@@ -139,4 +139,4 @@ void CMFCApplicationDoc::Dump(CDumpContext& dc) const
 #endif //_DEBUG
 
 
-// CMFCApplicationDoc ÃüÁî
+// CMFCApplicationDoc å‘½ä»¤

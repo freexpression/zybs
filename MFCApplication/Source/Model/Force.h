@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 class CForce
 {
@@ -6,9 +6,8 @@ public:
 	CForce();
 	~CForce();
 public:
-	CString m_name; //Ãû³Æ£¬¿ÉÑ¡¡£
-	float m_force = 0; //Á¦£¬µ¥Î»Å£¶Ù
-	CPoint m_point; //ÊÜÁ¦µã
-	float m_direct = 0;//ÊÜÁ¦·½Ïò, ÒÔXÖáÕı°ëÖá£¬ÄæÊ±Õë·½ÏòĞÎ³ÉµÄ½Ç¶È¡£ 
+	CString m_name; //åç§°ï¼Œå¯é€‰ã€‚
+	float m_force = 0; //åŠ›ï¼Œå•ä½ç‰›é¡¿
+	CPoint m_point; //å—åŠ›ç‚¹
+	float m_direct = 0;//å—åŠ›æ–¹å‘, ä»¥Xè½´æ­£åŠè½´ï¼Œé€†æ—¶é’ˆæ–¹å‘å½¢æˆçš„è§’åº¦ã€‚ 
 };
-

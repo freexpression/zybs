@@ -1,5 +1,5 @@
-
-// MFCApplicationView.h : CMFCApplicationView ÀàµÄ½Ó¿Ú
+ï»¿
+// MFCApplicationView.h : CMFCApplicationView ç±»çš„æ¥å£
 //
 
 #pragma once
@@ -9,27 +9,27 @@
 
 class CMFCApplicationView : public CView
 {
-protected: // ½ö´ÓĞòÁĞ»¯´´½¨
+protected: // ä»…ä»åºåˆ—åŒ–åˆ›å»º
 	CMFCApplicationView();
 	DECLARE_DYNCREATE(CMFCApplicationView)
 
-// ÌØĞÔ
+// ç‰¹æ€§
 public:
 	CMFCApplicationDoc* GetDocument() const;
 
-// ²Ù×÷
+// æ“ä½œ
 public:
 
-// ÖØĞ´
+// é‡å†™
 public:
-	virtual void OnDraw(CDC* pDC);  // ÖØĞ´ÒÔ»æÖÆ¸ÃÊÓÍ¼
+	virtual void OnDraw(CDC* pDC);  // é‡å†™ä»¥ç»˜åˆ¶è¯¥è§†å›¾
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 protected:
 	virtual BOOL OnPreparePrinting(CPrintInfo* pInfo);
 	virtual void OnBeginPrinting(CDC* pDC, CPrintInfo* pInfo);
 	virtual void OnEndPrinting(CDC* pDC, CPrintInfo* pInfo);
 
-// ÊµÏÖ
+// å®ç°
 public:
 	virtual ~CMFCApplicationView();
 #ifdef _DEBUG
@@ -39,7 +39,7 @@ public:
 
 protected:
 
-// Éú³ÉµÄÏûÏ¢Ó³Éäº¯Êı
+// ç”Ÿæˆçš„æ¶ˆæ¯æ˜ å°„å‡½æ•°
 protected:
 	DECLARE_MESSAGE_MAP()
 public:
@@ -53,25 +53,25 @@ public:
     afx_msg void OnPlayStart();
 
 
-	//ÓÃ»§²Ù×÷
-	static const int OP_CURSOR = 0;//ÆÕÍ¨Ä£Ê½£¬¿ÉÒÔÑ¡Ôñ¡¢ÒÆ¶¯¶ÔÏó¡£
-	static const int OP_ADD_PLANE = 1; //Ìí¼ÓÆ½Ì¨
+	//ç”¨æˆ·æ“ä½œ
+	static const int OP_CURSOR = 0;//æ™®é€šæ¨¡å¼ï¼Œå¯ä»¥é€‰æ‹©ã€ç§»åŠ¨å¯¹è±¡ã€‚
+	static const int OP_ADD_PLANE = 1; //æ·»åŠ å¹³å°
 	afx_msg void OnOpAddPlane();
 	afx_msg void OnOpNormal();
 	afx_msg void OnUpdateOpAddPlane(CCmdUI *pCmdUI);
 	afx_msg void OnUpdateOpNormal(CCmdUI *pCmdUI);
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
     afx_msg void OnPlayStop();
-
+    
 protected:
-    void Paint(CDC * pDC);//ÊµÏÖ´°¿Ú»æÖÆ¡£
-    void Repaint(); //ÖØ»­½çÃæº¯Êı¡£
-    void SetOpNormal();//ÉèÖÃÎªÆÕÍ¨Ä£Ê½£»
+    void Paint(CDC * pDC);//å®ç°çª—å£ç»˜åˆ¶ã€‚
+    void Repaint(); //é‡ç”»ç•Œé¢å‡½æ•°ã€‚
+    void SetOpNormal();//è®¾ç½®ä¸ºæ™®é€šæ¨¡å¼ï¼›
        
     void HandleAddPlaneEvent(UINT nFlags, CPoint point);
 };
 
-#ifndef _DEBUG  // MFCApplicationView.cpp ÖĞµÄµ÷ÊÔ°æ±¾
+#ifndef _DEBUG  // MFCApplicationView.cpp ä¸­çš„è°ƒè¯•ç‰ˆæœ¬
 inline CMFCApplicationDoc* CMFCApplicationView::GetDocument() const
    { return reinterpret_cast<CMFCApplicationDoc*>(m_pDocument); }
 #endif

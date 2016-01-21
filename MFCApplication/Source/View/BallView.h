@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "Ball.h"
 #include "ObjView.h"
@@ -12,4 +12,3 @@ public:
 private:
 	CBall m_ball;
 };
-

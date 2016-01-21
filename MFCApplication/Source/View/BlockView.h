@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "Block.h"
 #include "ObjView.h"
@@ -11,4 +11,3 @@ public:
 public:
 	CBlock m_block;
 };
-

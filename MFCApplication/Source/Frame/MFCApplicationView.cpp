@@ -1,10 +1,10 @@
-
-// MFCApplicationView.cpp : CMFCApplicationView ÀàµÄÊµÏÖ
+ï»¿
+// MFCApplicationView.cpp : CMFCApplicationView ç±»çš„å®žçŽ°
 //
 
 #include "stdafx.h"
-// SHARED_HANDLERS ¿ÉÒÔÔÚÊµÏÖÔ¤ÀÀ¡¢ËõÂÔÍ¼ºÍËÑË÷É¸Ñ¡Æ÷¾ä±úµÄ
-// ATL ÏîÄ¿ÖÐ½øÐÐ¶¨Òå£¬²¢ÔÊÐíÓë¸ÃÏîÄ¿¹²ÏíÎÄµµ´úÂë¡£
+// SHARED_HANDLERS å¯ä»¥åœ¨å®žçŽ°é¢„è§ˆã€ç¼©ç•¥å›¾å’Œæœç´¢ç­›é€‰å™¨å¥æŸ„çš„
+// ATL é¡¹ç›®ä¸­è¿›è¡Œå®šä¹‰ï¼Œå¹¶å…è®¸ä¸Žè¯¥é¡¹ç›®å…±äº«æ–‡æ¡£ä»£ç ã€‚
 #ifndef SHARED_HANDLERS
 #include "MFCApplication.h"
 #endif
@@ -22,7 +22,7 @@
 IMPLEMENT_DYNCREATE(CMFCApplicationView, CView)
 
 BEGIN_MESSAGE_MAP(CMFCApplicationView, CView)
-	// ±ê×¼´òÓ¡ÃüÁî
+	// æ ‡å‡†æ‰“å°å‘½ä»¤
 	ON_COMMAND(ID_FILE_PRINT, &CView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_DIRECT, &CView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CView::OnFilePrintPreview)
@@ -37,11 +37,11 @@ ON_WM_LBUTTONDOWN()
 ON_COMMAND(ID_PLAY_STOP, &CMFCApplicationView::OnPlayStop)
 END_MESSAGE_MAP()
 
-// CMFCApplicationView ¹¹Ôì/Îö¹¹
+// CMFCApplicationView æž„é€ /æžæž„
 
 CMFCApplicationView::CMFCApplicationView()
 {
-	// TODO: ÔÚ´Ë´¦Ìí¼Ó¹¹Ôì´úÂë
+	// TODO: åœ¨æ­¤å¤„æ·»åŠ æž„é€ ä»£ç 
 }
 
 CMFCApplicationView::~CMFCApplicationView()
@@ -50,13 +50,13 @@ CMFCApplicationView::~CMFCApplicationView()
 
 BOOL CMFCApplicationView::PreCreateWindow(CREATESTRUCT& cs)
 {
-	// TODO: ÔÚ´Ë´¦Í¨¹ýÐÞ¸Ä
-	//  CREATESTRUCT cs À´ÐÞ¸Ä´°¿ÚÀà»òÑùÊ½
+	// TODO: åœ¨æ­¤å¤„é€šè¿‡ä¿®æ”¹
+	//  CREATESTRUCT cs æ¥ä¿®æ”¹çª—å£ç±»æˆ–æ ·å¼
 
 	return CView::PreCreateWindow(cs);
 }
 
-// CMFCApplicationView »æÖÆ
+// CMFCApplicationView ç»˜åˆ¶
 
 void CMFCApplicationView::OnDraw(CDC* pDC)
 {
@@ -69,26 +69,26 @@ void CMFCApplicationView::OnDraw(CDC* pDC)
 }
 
 
-// CMFCApplicationView ´òÓ¡
+// CMFCApplicationView æ‰“å°
 
 BOOL CMFCApplicationView::OnPreparePrinting(CPrintInfo* pInfo)
 {
-	// Ä¬ÈÏ×¼±¸
+	// é»˜è®¤å‡†å¤‡
 	return DoPreparePrinting(pInfo);
 }
 
 void CMFCApplicationView::OnBeginPrinting(CDC* /*pDC*/, CPrintInfo* /*pInfo*/)
 {
-	// TODO: Ìí¼Ó¶îÍâµÄ´òÓ¡Ç°½øÐÐµÄ³õÊ¼»¯¹ý³Ì
+	// TODO: æ·»åŠ é¢å¤–çš„æ‰“å°å‰è¿›è¡Œçš„åˆå§‹åŒ–è¿‡ç¨‹
 }
 
 void CMFCApplicationView::OnEndPrinting(CDC* /*pDC*/, CPrintInfo* /*pInfo*/)
 {
-	// TODO: Ìí¼Ó´òÓ¡ºó½øÐÐµÄÇåÀí¹ý³Ì
+	// TODO: æ·»åŠ æ‰“å°åŽè¿›è¡Œçš„æ¸…ç†è¿‡ç¨‹
 }
 
 
-// CMFCApplicationView Õï¶Ï
+// CMFCApplicationView è¯Šæ–­
 
 #ifdef _DEBUG
 void CMFCApplicationView::AssertValid() const
@@ -101,7 +101,7 @@ void CMFCApplicationView::Dump(CDumpContext& dc) const
 	CView::Dump(dc);
 }
 
-CMFCApplicationDoc* CMFCApplicationView::GetDocument() const // ·Çµ÷ÊÔ°æ±¾ÊÇÄÚÁªµÄ
+CMFCApplicationDoc* CMFCApplicationView::GetDocument() const // éžè°ƒè¯•ç‰ˆæœ¬æ˜¯å†…è”çš„
 {
 	ASSERT(m_pDocument->IsKindOf(RUNTIME_CLASS(CMFCApplicationDoc)));
 	return (CMFCApplicationDoc*)m_pDocument;
@@ -109,10 +109,10 @@ CMFCApplicationDoc* CMFCApplicationView::GetDocument() const // ·Çµ÷ÊÔ°æ±¾ÊÇÄÚÁª
 #endif //_DEBUG
 
 
-// CMFCApplicationView ÏûÏ¢´¦Àí³ÌÐò
+// CMFCApplicationView æ¶ˆæ¯å¤„ç†ç¨‹åº
 void CMFCApplicationView::OnTimer(UINT_PTR nIDEvent)
 {
-    //TODO:µ÷ÓÃÒýÇæ¼ÆËãÎïÌåµÄÎ»ÖÃËÙ¶ÈµÈÐÅÏ¢¡£
+    //TODO:è°ƒç”¨å¼•æ“Žè®¡ç®—ç‰©ä½“çš„ä½ç½®é€Ÿåº¦ç­‰ä¿¡æ¯ã€‚
 
     //
 
@@ -166,7 +166,7 @@ void CMFCApplicationView::OnLButtonDown(UINT nFlags, CPoint point)
         break;
     }
 
-    //ÉèÖÃ´°¿ÚÎªÎÞÐ§ÇøÓò£¬´¥·¢ÖØ»æ
+    //è®¾ç½®çª—å£ä¸ºæ— æ•ˆåŒºåŸŸï¼Œè§¦å‘é‡ç»˜
     Invalidate();
 	CView::OnLButtonDown(nFlags, point);
 }
@@ -177,9 +177,9 @@ void CMFCApplicationView::Paint(CDC* pDC)
 
     for (it = m_ViewList.begin(); it != m_ViewList.end(); it++)
     {
-        //TODO:Ê×ÏÈ¸ù¾Ýobj¸üÐÂviewµÄ³ß´ç¡£
+        //TODO:é¦–å…ˆæ ¹æ®objæ›´æ–°viewçš„å°ºå¯¸ã€‚
 
-        //½«×ÔÉí»æÖÆº¯Êý¡£
+        //å°†è‡ªèº«ç»˜åˆ¶å‡½æ•°ã€‚
         (*it)->Paint(pDC);
     }
 }

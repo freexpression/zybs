@@ -1,5 +1,5 @@
-
-// MainFrm.cpp : CMainFrame ÀàµÄÊµÏÖ
+ï»¿
+// MainFrm.cpp : CMainFrame ç±»çš„å®ç°
 //
 
 #include "stdafx.h"
@@ -21,17 +21,17 @@ END_MESSAGE_MAP()
 
 static UINT indicators[] =
 {
-	ID_SEPARATOR,           // ×´Ì¬ĞĞÖ¸Ê¾Æ÷
+	ID_SEPARATOR,           // çŠ¶æ€è¡ŒæŒ‡ç¤ºå™¨
 	ID_INDICATOR_CAPS,
 	ID_INDICATOR_NUM,
 	ID_INDICATOR_SCRL,
 };
 
-// CMainFrame ¹¹Ôì/Îö¹¹
+// CMainFrame æ„é€ /ææ„
 
 CMainFrame::CMainFrame()
 {
-	// TODO: ÔÚ´ËÌí¼Ó³ÉÔ±³õÊ¼»¯´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æˆå‘˜åˆå§‹åŒ–ä»£ç 
 }
 
 CMainFrame::~CMainFrame()
@@ -46,33 +46,33 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (!m_wndToolBar.CreateEx(this, TBSTYLE_FLAT, WS_CHILD | WS_VISIBLE | CBRS_TOP | CBRS_GRIPPER | CBRS_TOOLTIPS | CBRS_FLYBY | CBRS_SIZE_DYNAMIC) ||
 		!m_wndToolBar.LoadToolBar(IDR_MAINFRAME))
 	{
-		TRACE0("Î´ÄÜ´´½¨¹¤¾ßÀ¸\n");
-		return -1;      // Î´ÄÜ´´½¨
+		TRACE0("æœªèƒ½åˆ›å»ºå·¥å…·æ \n");
+		return -1;      // æœªèƒ½åˆ›å»º
 	}
 
 	if (!m_wndPlayToolBar.CreateEx(this, TBSTYLE_FLAT, WS_CHILD | WS_VISIBLE | CBRS_TOP | CBRS_GRIPPER | CBRS_TOOLTIPS | CBRS_FLYBY | CBRS_SIZE_DYNAMIC) ||
 		!m_wndPlayToolBar.LoadToolBar(IDR_PLAY_TOOLBAR))
 	{
-		TRACE0("Î´ÄÜ´´½¨Ä£ĞÍ¹¤¾ßÀ¸\n");
-		return -1;      // Î´ÄÜ´´½¨
+		TRACE0("æœªèƒ½åˆ›å»ºæ¨¡å‹å·¥å…·æ \n");
+		return -1;      // æœªèƒ½åˆ›å»º
 	}
 
 	if (!m_wndModelToolBar.CreateEx(this, TBSTYLE_FLAT, WS_CHILD | WS_VISIBLE | CBRS_TOP | CBRS_GRIPPER | CBRS_TOOLTIPS | CBRS_FLYBY | CBRS_SIZE_DYNAMIC) ||
 		!m_wndModelToolBar.LoadToolBar(IDR_MODEL_TOOLBAR))
 	{
-		TRACE0("Î´ÄÜ´´½¨²¥·Å¹¤¾ßÀ¸\n");
-		return -1;      // Î´ÄÜ´´½¨
+		TRACE0("æœªèƒ½åˆ›å»ºæ’­æ”¾å·¥å…·æ \n");
+		return -1;      // æœªèƒ½åˆ›å»º
 	}
 	
 	
 	if (!m_wndStatusBar.Create(this))
 	{
-		TRACE0("Î´ÄÜ´´½¨×´Ì¬À¸\n");
-		return -1;      // Î´ÄÜ´´½¨
+		TRACE0("æœªèƒ½åˆ›å»ºçŠ¶æ€æ \n");
+		return -1;      // æœªèƒ½åˆ›å»º
 	}
 	m_wndStatusBar.SetIndicators(indicators, sizeof(indicators)/sizeof(UINT));
 
-	// TODO: Èç¹û²»ĞèÒª¿ÉÍ£¿¿¹¤¾ßÀ¸£¬ÔòÉ¾³ıÕâÈıĞĞ
+	// TODO: å¦‚æœä¸éœ€è¦å¯åœé å·¥å…·æ ï¼Œåˆ™åˆ é™¤è¿™ä¸‰è¡Œ
 	m_wndPlayToolBar.EnableDocking(CBRS_ALIGN_ANY);
 	EnableDocking(CBRS_ALIGN_ANY);
 	DockControlBar(&m_wndPlayToolBar);
@@ -84,13 +84,13 @@ BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
 {
 	if( !CFrameWnd::PreCreateWindow(cs) )
 		return FALSE;
-	// TODO: ÔÚ´Ë´¦Í¨¹ıĞŞ¸Ä
-	//  CREATESTRUCT cs À´ĞŞ¸Ä´°¿ÚÀà»òÑùÊ½
+	// TODO: åœ¨æ­¤å¤„é€šè¿‡ä¿®æ”¹
+	//  CREATESTRUCT cs æ¥ä¿®æ”¹çª—å£ç±»æˆ–æ ·å¼
 
 	return TRUE;
 }
 
-// CMainFrame Õï¶Ï
+// CMainFrame è¯Šæ–­
 
 #ifdef _DEBUG
 void CMainFrame::AssertValid() const
@@ -105,4 +105,4 @@ void CMainFrame::Dump(CDumpContext& dc) const
 #endif //_DEBUG
 
 
-// CMainFrame ÏûÏ¢´¦Àí³ÌĞò
+// CMainFrame æ¶ˆæ¯å¤„ç†ç¨‹åº

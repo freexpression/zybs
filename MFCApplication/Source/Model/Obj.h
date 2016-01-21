@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <vector>
 #include "Speed.h"
@@ -6,7 +6,7 @@
 
 
 /*
-ÎïÀíÎïÌå³éÏóÀà£¬¾ß±¸»ù±¾µÄÎïÀíÊôĞÔ£ºÖÊÁ¿¡¢ËÙ¶È¡¢¼ÓËÙ¶È¡¢ÖØĞÄ¡¢Á¦µÈ¡£ËùÓĞµÄÎïÀíÊµÌå¶¼¼Ì³Ğ¸ÃÀà¡£
+ç‰©ç†ç‰©ä½“æŠ½è±¡ç±»ï¼Œå…·å¤‡åŸºæœ¬çš„ç‰©ç†å±æ€§ï¼šè´¨é‡ã€é€Ÿåº¦ã€åŠ é€Ÿåº¦ã€é‡å¿ƒã€åŠ›ç­‰ã€‚æ‰€æœ‰çš„ç‰©ç†å®ä½“éƒ½ç»§æ‰¿è¯¥ç±»ã€‚
 */
 class CObj
 {
@@ -14,13 +14,13 @@ public:
 	CObj();
 	~CObj();
 public:
-	float m_mass = 0;//ÖÊÁ¿
-	CSpeed m_speed; //ËÙ¶È
-	float m_acceleration = 0; //¼ÓËÙ¶È
-	CPoint m_centre; //ÖØĞÄ
-	std::vector<CForce> m_forces; //ÊÜÁ¦
+	float m_mass = 0;//è´¨é‡
+	CSpeed m_speed; //é€Ÿåº¦
+	float m_acceleration = 0; //åŠ é€Ÿåº¦
+	CPoint m_centre; //é‡å¿ƒ
+	std::vector<CForce> m_forces; //å—åŠ›
 
 public:
-	bool hasForce(); //ÊÇ·ñÊÜÁ¦
+	bool hasForce(); //æ˜¯å¦å—åŠ›
 };
 

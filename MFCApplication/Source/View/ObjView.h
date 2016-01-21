@@ -1,8 +1,8 @@
-#pragma once
+﻿#pragma once
 
 #include "Obj.h"
 /*
-������ͼ�����࣬���е����嶼�̳и��ࡣ
+物体视图抽象类，所有的物体都继承该类。
 */
 class CObjView
 {
@@ -21,4 +21,3 @@ protected:
 	CObj* m_Obj;
     CPoint m_Postion;
 };
-

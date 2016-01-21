@@ -1,9 +1,9 @@
-#pragma once
+ï»¿#pragma once
 
 #include "Speed.h"
 
 /*
- ¶¨Òå´øÓĞÖØÁ¦µÄÎïÌåÀà£¬´ËÀàÎïÌå»áÊÜÖØÁ¦×÷ÓÃ¡£
+ å®šä¹‰å¸¦æœ‰é‡åŠ›çš„ç‰©ä½“ç±»ï¼Œæ­¤ç±»ç‰©ä½“ä¼šå—é‡åŠ›ä½œç”¨ã€‚
 */
 class CWeightObject
 {
@@ -12,8 +12,7 @@ public:
 	~CWeightObject();
 
 private:
-	float m_mass = 0;//ÖÊÁ¿
-	float m_frict = 0;//Ä¦²ÁÏµÊı
-	CSpeed m_speed; //ÊÜÁ¦
+	float m_mass = 0;//è´¨é‡
+	float m_frict = 0;//æ‘©æ“¦ç³»æ•°
+	CSpeed m_speed; //å—åŠ›
 };
-

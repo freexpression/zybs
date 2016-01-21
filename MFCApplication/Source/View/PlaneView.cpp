@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "PlaneView.h"
 
 CPlaneView::CPlaneView()
@@ -27,6 +27,6 @@ void CPlaneView::Paint(CDC* pDC)
     rect.right = m_Postion.x + m_Size.left - m_Size.right;
     rect.bottom = m_Postion.y + m_Size.top - m_Size.bottom;
 
-    pDC->RoundRect(&rect, CPoint(5, 5));   //»­Ô²½Ç¾ØÐÎ
+    pDC->RoundRect(&rect, CPoint(5, 5));   //ç”»åœ†è§’çŸ©å½¢
 //    pDC->DrawEdge(&m_Size, EDGE_RAISED, BF_ADJUST | BF_BOTTOMLEFT | BF_TOPRIGHT);
 }

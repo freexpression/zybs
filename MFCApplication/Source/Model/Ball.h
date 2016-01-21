@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "Obj.h"
 
 class CBall : public CObj
@@ -8,7 +8,7 @@ public:
 	~CBall();
 
 public:
-	int m_x = 0; //×óÉÏ½ÇÎ»ÖÃX
-	int m_y = 0; //×óÉÏ½ÇÎ»ÖÃY
-	float m_scale = 0; //°ë¾¶
+	int m_x = 0; //å·¦ä¸Šè§’ä½ç½®X
+	int m_y = 0; //å·¦ä¸Šè§’ä½ç½®Y
+	float m_scale = 0; //åŠå¾„
 };

@@ -1,5 +1,5 @@
-
-// MFCApplicationDoc.h : CMFCApplicationDoc ÀàµÄ½Ó¿Ú
+ï»¿
+// MFCApplicationDoc.h : CMFCApplicationDoc ç±»çš„æ¥å£
 //
 #pragma once
 
@@ -7,19 +7,19 @@
 
 class CMFCApplicationDoc : public CDocument
 {
-protected: // ½ö´ÓĞòÁĞ»¯´´½¨
+protected: // ä»…ä»åºåˆ—åŒ–åˆ›å»º
 	CMFCApplicationDoc();
 	DECLARE_DYNCREATE(CMFCApplicationDoc)
 
-// ÌØĞÔ
+// ç‰¹æ€§
 public:
 
-// ²Ù×÷
+// æ“ä½œ
 public:
-	//Ìí¼ÓÒ»¸öÄ£ĞÍµ½DocÖĞ£¬Í¬Ê±·µ»Ø¸ÃObj¡£
+	//æ·»åŠ ä¸€ä¸ªæ¨¡å‹åˆ°Docä¸­ï¼ŒåŒæ—¶è¿”å›è¯¥Objã€‚
 	CObj& AddObj(CObj& pObj);
 
-// ÖØĞ´
+// é‡å†™
 public:
 	virtual BOOL OnNewDocument();
 	virtual void Serialize(CArchive& ar);
@@ -28,7 +28,7 @@ public:
 	virtual void OnDrawThumbnail(CDC& dc, LPRECT lprcBounds);
 #endif // SHARED_HANDLERS
 
-// ÊµÏÖ
+// å®ç°
 public:
 	virtual ~CMFCApplicationDoc();
 #ifdef _DEBUG
@@ -38,12 +38,12 @@ public:
 
 protected:
 
-// Éú³ÉµÄÏûÏ¢Ó³Éäº¯Êı
+// ç”Ÿæˆçš„æ¶ˆæ¯æ˜ å°„å‡½æ•°
 protected:
 	DECLARE_MESSAGE_MAP()
 
 #ifdef SHARED_HANDLERS
-	// ÓÃÓÚÎªËÑË÷´¦Àí³ÌĞòÉèÖÃËÑË÷ÄÚÈİµÄ Helper º¯Êı
+	// ç”¨äºä¸ºæœç´¢å¤„ç†ç¨‹åºè®¾ç½®æœç´¢å†…å®¹çš„ Helper å‡½æ•°
 	void SetSearchContent(const CString& value);
 #endif // SHARED_HANDLERS
 };
