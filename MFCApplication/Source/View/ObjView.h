@@ -15,8 +15,10 @@ public:
 
 	void SetObj(CObj& pObj);
 	CObj& GetObj();
+    void SetPostion(CPoint point);
 
 protected:
 	CObj* m_Obj;
+    CPoint m_Postion;
 };
 

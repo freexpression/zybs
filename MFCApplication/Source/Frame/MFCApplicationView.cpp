@@ -65,12 +65,7 @@ void CMFCApplicationView::OnDraw(CDC* pDC)
 	if (!pDoc)
 		return;
 
-	std::vector<CObjView*>::iterator it;
-
-	for (it = m_ViewList.begin(); it != m_ViewList.end(); it++)
-	{
-		(*it)->Paint(pDC);
-	}
+    Paint(pDC);
 }
 
 
@@ -115,16 +110,12 @@ CMFCApplicationDoc* CMFCApplicationView::GetDocument() const // 非调试版本是内联
 
 
 // CMFCApplicationView 消息处理程序
-
-void CMFCApplicationView::Repaint()
-{
-    CDC* pDC = CWnd::GetDC();
-
-    OnDraw(pDC);
-}
-
 void CMFCApplicationView::OnTimer(UINT_PTR nIDEvent)
 {
+    //TODO:调用引擎计算物体的位置速度等信息。
+
+    //
+
     Repaint();
 }
 
@@ -180,27 +171,30 @@ void CMFCApplicationView::OnLButtonDown(UINT nFlags, CPoint point)
 	CView::OnLButtonDown(nFlags, point);
 }
 
+void CMFCApplicationView::Paint(CDC* pDC)
+{
+    std::vector<CObjView*>::iterator it;
+
+    for (it = m_ViewList.begin(); it != m_ViewList.end(); it++)
+    {
+        //TODO:首先根据obj更新view的尺寸。
+
+        //将自身绘制函数。
+        (*it)->Paint(pDC);
+    }
+}
+
+void CMFCApplicationView::Repaint()
+{
+    CDC* pDC = CWnd::GetDC();
+
+    OnDraw(pDC);
+}
+
+
 void CMFCApplicationView::SetOpNormal()
 {
     m_Mode = OP_CURSOR;
-    HCURSOR m_Cursor;
-    m_Cursor = AfxGetApp()->LoadCursor(IDC_CURSOR1);
-
-    CToolBar *pToolBar = (CToolBar *)//取得工具栏对象指针
-
-        (GetParentFrame()->GetControlBar(IDR_DOCKTOOLBAR));
-
-    //取得工具条控制指针
-
-    CToolBarCtrl *pToolBarCtrl = &(pToolBar->GetToolBarCtrl());
-
-    //控制工具条按钮状态
-
-    pToolBarCtrl->EnableButton(ID_BUTTON_START, FALSE);
-
-    pToolBarCtrl->EnableButton(ID_BUTTON_STOP, TRUE);
-
-    CClientDC dc(this);//取得设备文本
 }
 
 void CMFCApplicationView::HandleAddPlaneEvent(UINT nFlags, CPoint point)
@@ -212,6 +206,7 @@ void CMFCApplicationView::HandleAddPlaneEvent(UINT nFlags, CPoint point)
 
     CPlaneView* pView = new CPlaneView();
     pView->SetObj(pPlane);
+    pView->SetPostion(point);
 
     m_ViewList.push_back(pView);
 }

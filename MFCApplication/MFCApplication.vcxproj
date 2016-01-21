@@ -244,6 +244,7 @@
     <ClCompile Include="Source\Model\Speed.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="MFCApplication.reg" />
     <None Include="res\MFCApplication.rc2" />
   </ItemGroup>

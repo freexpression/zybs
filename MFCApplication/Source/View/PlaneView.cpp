@@ -20,6 +20,13 @@ void CPlaneView::Paint(CDC* pDC)
     CPen Pen;
     Pen.CreatePen(PS_SOLID, 1, bColor);
     pDC->SelectObject(&Pen);
-    pDC->RoundRect(&m_Size, CPoint(5, 5));   //»­Ô²½Ç¾ØÐÎ
+
+    CRect rect;
+    rect.left = m_Postion.x;
+    rect.top = m_Postion.y;
+    rect.right = m_Postion.x + m_Size.left - m_Size.right;
+    rect.bottom = m_Postion.y + m_Size.top - m_Size.bottom;
+
+    pDC->RoundRect(&rect, CPoint(5, 5));   //»­Ô²½Ç¾ØÐÎ
 //    pDC->DrawEdge(&m_Size, EDGE_RAISED, BF_ADJUST | BF_BOTTOMLEFT | BF_TOPRIGHT);
 }

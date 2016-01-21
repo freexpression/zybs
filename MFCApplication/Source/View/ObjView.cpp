@@ -24,3 +24,8 @@ CObj& CObjView::GetObj()
 {
 	return *m_Obj;
 }
+
+void CObjView::SetPostion(CPoint point)
+{
+    m_Postion = point;
+}

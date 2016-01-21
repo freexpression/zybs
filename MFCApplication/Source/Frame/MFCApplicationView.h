@@ -64,6 +64,7 @@ public:
     afx_msg void OnPlayStop();
 
 protected:
+    void Paint(CDC * pDC);//实现窗口绘制。
     void Repaint(); //重画界面函数。
     void SetOpNormal();//设置为普通模式；
        
